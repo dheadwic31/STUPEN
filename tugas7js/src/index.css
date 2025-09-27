@@ -1,0 +1,153 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+ * v2.0 | 20110126
+ * License: none (public domain)
+ * (Kode Reset CSS yang Anda berikan)
+ */
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+ }
+ article, aside, details, figcaption, figure, 
+ footer, header, hgroup, menu, nav, section {
+   display: block;
+ }
+ body {
+   line-height: 1.6; /* Ditingkatkan agar teks lebih mudah dibaca */
+   font-family: Arial, sans-serif;
+   background-color: #fcfcfc; /* Latar belakang sangat lembut */
+ }
+ ol, ul {
+   list-style: none;
+ }
+ blockquote, q {
+   quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+   content: '';
+   content: none;
+ }
+ table {
+   border-collapse: collapse;
+   border-spacing: 0;
+ }
+ 
+ 
+ /* ======================================================= */
+ /* GAYA PINK & ANIMASI BARU                      */
+ /* ======================================================= */
+ 
+ :root {
+   /* Warna Pink Aksen */
+   --bs-primary: #ff8fab; 
+   --bs-primary-rgb: 255, 143, 171;
+   --bs-secondary: #fce4ec; /* Pink sangat muda untuk latar belakang atau kartu */
+   --bs-secondary-rgb: 252, 228, 236;
+   --text-pink-dark: #b84a6c; /* Pink gelap untuk teks */
+ }
+ 
+ /* Mengganti warna default Bootstrap dengan Pink */
+ .btn-primary {
+   --bs-btn-color: #fff;
+   --bs-btn-bg: var(--bs-primary);
+   --bs-btn-border-color: var(--bs-primary);
+   --bs-btn-hover-color: #fff;
+   --bs-btn-hover-bg: #e07aa0; /* Sedikit lebih gelap saat hover */
+   --bs-btn-active-bg: #c96788;
+   /* Transisi untuk animasi tombol */
+   transition: all 0.3s ease; 
+ }
+ 
+ /* Transisi dan efek 3D sederhana saat hover pada tombol */
+ .btn-primary:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 10px rgba(255, 143, 171, 0.4);
+ }
+ 
+ .text-primary {
+   color: var(--bs-primary) !important;
+ }
+ 
+ /* Header/Navbar Styling */
+ .link-body-emphasis, .nav-link:hover {
+     color: var(--text-pink-dark) !important;
+     font-weight: bold;
+ }
+ 
+ .border-bottom {
+     border-color: #fce4ec !important; /* Batas pemisah berwarna pink muda */
+ }
+ 
+ /* Section Styling */
+ .border-top {
+     border-color: #fce4ec !important;
+ }
+ 
+ /* ========================================= */
+ /* Animasi untuk Konten (Card & Kolom Tim) */
+ /* ========================================= */
+ 
+ /* Efek animasi pada Kartu Buku */
+ .card {
+   border: none;
+   border-radius: 12px;
+   overflow: hidden;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+   transition: transform 0.4s ease, box-shadow 0.4s ease;
+ }
+ 
+ .card:hover {
+   /* Sedikit perbesar saat dihover */
+   transform: translateY(-5px) scale(1.02); 
+   /* Bayangan yang lebih menonjol dengan nuansa pink */
+   box-shadow: 0 10px 25px rgba(255, 143, 171, 0.2); 
+ }
+ 
+ /* Animasi untuk Foto Profil Tim */
+ .rounded-circle {
+     /* Transisi untuk gambar */
+     transition: transform 0.4s ease, box-shadow 0.4s ease; 
+     border: 5px solid var(--bs-primary); /* Border Pink */
+ }
+ 
+ .rounded-circle:hover {
+     /* Sedikit rotasi dan bayangan saat dihover */
+     transform: rotate(3deg) scale(1.05); 
+     box-shadow: 0 0 0 8px rgba(255, 143, 171, 0.3);
+ }
+ 
+ /* Efek Fade In sederhana saat halaman dimuat (simulasi) */
+ @keyframes fadeIn {
+   from { opacity: 0; transform: translateY(20px); }
+   to { opacity: 1; transform: translateY(0); }
+ }
+ 
+ /* Terapkan Fade In ke bagian-bagian utama */
+ #home-section, #book-section, #team-section, #contact-section {
+     animation: fadeIn 1s ease-out;
+ }
+ 
+ /* Efek Latar Belakang pada Section Hero (Contoh) */
+ #home-section {
+     background: linear-gradient(135deg, #fff 0%, var(--bs-secondary) 100%);
+     padding-top: 5rem !important;
+     padding-bottom: 5rem !important;
+     border-radius: 15px;
+     margin-bottom: 3rem !important;
+ }
